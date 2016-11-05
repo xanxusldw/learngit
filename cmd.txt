@@ -1,7 +1,12 @@
 常用命令
+//git config设置的东西都可以在.gitconfig文件找到
 //申明自己的名字和email
 git config --global user.name "Name"
 git config --global user.email "Email"
+//设置代理
+git config --global http.proxy ip:port
+git config --global https.proxy ip:port
+git config --global http.sslverify false
 
 /** 添加修改到stage **/
 git add
@@ -22,6 +27,31 @@ git log --pretty=oneline
 
 //恢复之前的版本
 git reset --hard versionID（HEAD^ 接 ~num)
+//将stage中的内容撤销到工作区中
+git reset HEAD fileName
 
 //查看最近修改的版本的versionID
-git reflog
+git reflog (接fileName)
+
+//撤销工作区相对于stage 或者 branch的修改
+git checkout -- fileName
+
+//用于删除一个已经提交到版本库的文件
+git rm fileName
+
+//关联远程库， ssh & https 方式
+git remote add origin git@github.com:xanxusldw/learngit.git
+git remote add origin https://github.com/xanxusldw/learngit.git
+
+//删除远程库
+git remote rm origin
+
+//本地库内容推送到远程库
+git push -u origin master
+
+//克隆一个仓库
+git clone
+
+//mater分支是一条线，git用master指向最新的提交，再用HEAD指向master。  mater 指向提交， HEAD指向当前分支。
+
+
