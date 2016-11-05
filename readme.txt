@@ -1,1 +1,3 @@
-Hello Git, control by git version control.
+Hello Git, @ git version control.
+Git is a distributed version control system.
+Git is free software.
