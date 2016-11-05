@@ -1,0 +1,27 @@
+常用命令
+//申明自己的名字和email
+git config --global user.name "Name"
+git config --global user.email "Email"
+
+/** 添加修改到stage **/
+git add
+
+// 提交修改到branch, -m 后跟修改的描述
+git commit -m "desc"
+
+//查看当前工作区的状态
+git status
+
+//上次修改的对比显示
+git diff  fileName
+//查看工作区和版本库里面最新版本的区别 
+git diff HEAD -- fileName
+
+//查看文件修改记录, --pretty=oneline简略成一行显示
+git log --pretty=oneline
+
+//恢复之前的版本
+git reset --hard versionID（HEAD^ 接 ~num)
+
+//查看最近修改的版本的versionID
+git reflog
