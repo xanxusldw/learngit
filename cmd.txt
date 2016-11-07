@@ -7,6 +7,10 @@ git config --global user.email "Email"
 git config --global http.proxy ip:port
 git config --global https.proxy ip:port
 git config --global http.sslverify false
+git config --global color.ui true
+
+//修改名称别名,如果name 是带空格多个词则用单引号隔开
+git config --global alias.<aname> <name>
 
 /** 添加修改到stage **/
 git add
@@ -23,7 +27,9 @@ git diff  fileName
 git diff HEAD -- fileName
 
 //查看文件修改记录, --pretty=oneline简略成一行显示
-git log --pretty=oneline
+git log --pretty=oneline (--aabrev-commit)
+//查看最后一次修改
+git log -1
 
 //恢复之前的版本
 git reset --hard versionID（HEAD^ 接 ~num)
@@ -81,6 +87,50 @@ git stash drop
 git stash pop
 //查看是否有stash 内容
 git stash list
+
+//查看远程库信息
+git remote (-v)
+//推送分支
+git push origin <branch-name>
+//抓取分支
+git clone <remote-addr>
+//创建远程origin的dev分支到本地
+git checkout -b dev origin/dev
+//指定本地dev分支与远程origin/dev分支的链接
+git branch --set-upstream dev origin/dev
+git branch --set-upstream-to=origin/dev dev
+//抓取远程分支最新的提交，然后可以处理与本地冲突的合并
+git pull
+
+
+//创建标签
+git tag -a <name> -m <description> <commitId>
+//查看所有tag
+git tag
+//查看特定的tag
+git show <tagname>
+//pgp 签名标签
+git tag -s <tagname> -m <description> <commitId>
+//删除标签
+git tag -d v0.1
+//推送标签到远程服务器
+git push origin <tagname>
+//一次性推送所有标签到远程服务器
+git push origin --tags
+//删除远程标签
+git tag -d <tagname> //本地删
+git push origin :refs/tags/<tagname>
+or git push origin --delete tag <tagname>
+
+
+//fork & clone & pull request
+
+//add .gitignore to your workspace, then you can add igonred file or regex to filter these files
+//强制添加过滤的文件
+git add -f <file-name>
+//检查过滤文件的匹配项
+git check-ignore -v <name>
+
 
 
 
