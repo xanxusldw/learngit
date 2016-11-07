@@ -1,6 +1,9 @@
-learn website: https://git-scm.com/
+//网址
+https://git-scm.com/
 
 常用命令
+//github 创建一个仓库，然后本地
+git init
 //git config设置的东西都可以在.gitconfig文件找到
 //申明自己的名字和email
 git config --global user.name "Name"
