@@ -66,3 +66,18 @@ git merge <name>
 //删除分支
 git branch -d <name>
 
+//查看冲突合并情况
+git log --graph --pretty=oneline --abbrev-commit
+
+//保存当前工作现场
+git stash
+//恢复不删除工作现场内容
+git stash apply
+//删除工作现场
+git stash drop
+//恢复并删除stash
+git stash pop
+//查看是否有stash 内容
+git stash list
+
+
