@@ -65,6 +65,8 @@ git checkout -b <name>
 git merge <name>
 //删除分支
 git branch -d <name>
+//强行删除分支
+git branch -D <name>
 
 //查看冲突合并情况
 git log --graph --pretty=oneline --abbrev-commit
@@ -79,5 +81,6 @@ git stash drop
 git stash pop
 //查看是否有stash 内容
 git stash list
+
 
 
