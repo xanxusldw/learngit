@@ -1,2 +1,5 @@
 #uncheck file
 notrack.txt
+
+#pdf file
+*.pdf
